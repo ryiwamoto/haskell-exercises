@@ -7,12 +7,12 @@ module Src.Chapter1
 
     -- (1)
     manlen :: (Int, Int) -> (Int, Int) -> Int
-    manlen p1 p2 = undefined {- Rewrite HERE! -}
+    manlen (a, b) (c, d) = abs(a - c) + abs(b - d)
 
     -- (2)
     points :: Int -> [(Int, Int)]
-    points n = undefined {- Rewrite HERE! -}
+    points a = [(c, d) | c <- [-1 * a..a], d <- [-1 * a..a]]
 
     -- (3)
     mancircle :: Int -> [(Int, Int)]
-    mancircle n = undefined {- Rewrite HERE! -}
+    mancircle a = [(c, d) | (c, d) <- points a, manlen(0, 0)(c, d) == a]
