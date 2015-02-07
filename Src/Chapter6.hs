@@ -18,11 +18,11 @@ module Src.Chapter6
     -- (1.2)
     initialMap :: [String] -> Map.Map Char [String]
     -- initialMap ss = undefined {- Rewrite HERE! -}
-    initialMap = Map.fromList . Data.List.map (\x -> (head $ head x, x)) . groupBy (\x y -> head x  ==  head y) . sortBy (comparing $ Down . length) . Data.List.filter ((<) 0 . length)
+    initialMap = Map.fromList . Data.List.map (\x -> (head $ head x, x)) . groupBy (\x y -> head x  ==  head y) . sort . Data.List.filter ((<) 0 . length)
 
     -- (1.3)
     infixPalindromicNumber :: Int -> Int
-    infixPalindromicNumber n  =  head [m | m <- [0..], let m'  =  show m, reverse m'  =  =  m', show n `isInfixOf` m'] --解答を見た
+    infixPalindromicNumber n  =  head [m | m <- [0..], let m'  =  show m, reverse m'  ==  m', show n `isInfixOf` m'] --解答を見た
 
     -- (2)
     vernam :: String -> String -> String
