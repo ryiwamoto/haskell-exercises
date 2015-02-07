@@ -13,7 +13,7 @@ module Src.Chapter6
 
     -- (1.1)
     sortByFrequency :: Ord a => [a] -> [a]
-    sortByFrequency xs = undefined {- Rewrite HERE! -}
+    sortByFrequency = map head . sortBy (\x y -> compare (-1 * length x) (-1 * length y)) . group . sort
 
     -- (1.2)
     initialMap :: [String] -> Map.Map Char [String]
